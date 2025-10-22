@@ -8,7 +8,7 @@ function AdminLogin({ onLogin }) {
 
   const handleAdminLogin = (e) => {
     e.preventDefault();
-    if (username === 'Atifadmin' && password === 'Stemrobo') {
+    if (username === 'counsler123' && password === 'admin123') {
       onLogin();
     } else {
       setError('Invalid username or password.');
