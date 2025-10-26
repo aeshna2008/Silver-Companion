@@ -1,0 +1,29 @@
+app.post('/ask-ai', async (req, res) => {
+  try {
+    const { message } = req.body;
+    if (!message) {
+      return res.status(400).send({ error: 'Message is required' });
+    }
+    const mentalHealthKeywords = [
+      "stress", "anxiety", "depression", "happiness", "loneliness",
+      "mood", "calm", "sad", "angry", "mental health", "therapy", "self care"
+    ];
+    const isRelated = mentalHealthKeywords.some(keyword =>
+      message.toLowerCase().includes(keyword)
+    );
+    if (!isRelated) {
+      return res.send({
+        reply: "I'm designed to help with mental health and emotional wellbeing. Could you please ask something related to how you're feeling or mental wellness?"
+      });
+    }
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const result = await model.generateContent(message);
+    const response = await result.response;
+    const text = response.text();
+
+    res.send({ reply: text });
+  } catch (error) {
+    console.error("Error with Generative AI:", error);
+    res.status(500).send({ error: 'Failed to get response from AI' });
+  }
+});
