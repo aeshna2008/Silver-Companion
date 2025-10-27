@@ -1,13 +1,22 @@
 {
+  "name": "Silver Companion",
   "short_name": "SilverCompanion",
-  "name": "Silver Companion - Mental Wellness",
-  "description": "An AI mental wellness companion.",
-  "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
-  ],
+  "description": "Your AI-powered mental wellness app with journaling, Mindy chat, and mood tracking.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#1976d2"
+  "theme_color": "#b197fc",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
 }
