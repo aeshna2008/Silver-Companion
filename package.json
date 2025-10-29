@@ -28,4 +28,3 @@
     "vite": "^7.1.2"
   }
 }
-npm install --save-dev vite-plugin-pwa
